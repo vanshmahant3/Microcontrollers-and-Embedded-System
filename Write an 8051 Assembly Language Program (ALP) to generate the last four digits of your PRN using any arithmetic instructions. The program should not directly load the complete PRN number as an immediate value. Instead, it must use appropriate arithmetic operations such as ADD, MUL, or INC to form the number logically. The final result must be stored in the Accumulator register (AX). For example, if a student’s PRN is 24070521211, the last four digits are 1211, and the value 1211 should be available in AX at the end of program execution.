@@ -1,0 +1,14 @@
+ORG 0000H
+
+MOV A, #10        ; Load 10 into Accumulator
+MOV B, #100       ; Load 100 into B register
+MUL AB            ; A = 10 × 100 = 1000
+
+MOV R0, A         ; Store 1000 (lower byte) in R0
+
+MOV A, #38        ; Load 38
+ADD A, R0         ; A = 1000 + 38 = 1038
+
+HERE: SJMP HERE   ; End of program
+
+END
